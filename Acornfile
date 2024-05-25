@@ -1,0 +1,19 @@
+args:
+  djangodbname: "djangodb"
+
+services:
+  db:
+    image: "sqlite:latest"  # Use the official SQLite image
+    serviceArgs:
+      dbName: "db.sqlite3"  # Set the name of the SQLite database file
+
+containers:
+  web:
+    build: images.app.containerBuild
+    ports:
+      publish: "8000:8000/http"
+    dependsOn:
+      - "db"  # No need for dbinit job, but ensure web container starts after db container
+    if:
+      args.dev:
+        dirs: "/app": "./mysite"
