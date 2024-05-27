@@ -21,8 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-# SECRET_KEY = "v0**v^q7%a6b%p91z6!9t9n0y_9mw+d2h(o5^3&cqg#_@f1s!g"
+# SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = "v0**v^q7%a6b%p91z6!9t9n0y_9mw+d2h(o5^3&cqg#_@f1s!g"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -80,9 +80,9 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# Update the default DATABASES configuration for Heroku
+# Parse database configuration from $DATABASE_URL
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': dj_database_url.config(default='postgres://localhost:5432/calendardb')
 }
 print("BASE_DIR:", BASE_DIR)
 
