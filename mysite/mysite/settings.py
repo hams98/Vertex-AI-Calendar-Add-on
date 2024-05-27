@@ -28,7 +28,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ["calendar-assistant.herokuapp.com", "127.0.0.1"]
-CSRF_TRUSTED_ORIGINS = ["http://*.herokuapp.com", "https://*.herokuapp.com"]
+# "http://*.herokuapp.com", "https://*.herokuapp.com"
+CSRF_TRUSTED_ORIGINS = []
 
 
 # Application definition
