@@ -82,7 +82,7 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 # Parse database configuration from $DATABASE_URL
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://calendaruser:calendarpass@localhost:5432/calendardb')
+    'default': dj_database_url.config(default='sqlite:///db.sqlite3')
 }
 print("BASE_DIR:", BASE_DIR)
 
